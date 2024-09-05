@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/reactapp/static/css/main.ede9f429.chunk.css",
+    "main.js": "/reactapp/static/js/main.bf5e8d3d.chunk.js",
+    "main.js.map": "/reactapp/static/js/main.bf5e8d3d.chunk.js.map",
+    "runtime-main.js": "/reactapp/static/js/runtime-main.ba799c29.js",
+    "runtime-main.js.map": "/reactapp/static/js/runtime-main.ba799c29.js.map",
+    "static/css/2.9f67abcf.chunk.css": "/reactapp/static/css/2.9f67abcf.chunk.css",
+    "static/js/2.e541704a.chunk.js": "/reactapp/static/js/2.e541704a.chunk.js",
+    "static/js/2.e541704a.chunk.js.map": "/reactapp/static/js/2.e541704a.chunk.js.map",
+    "static/js/3.8d561aee.chunk.js": "/reactapp/static/js/3.8d561aee.chunk.js",
+    "static/js/3.8d561aee.chunk.js.map": "/reactapp/static/js/3.8d561aee.chunk.js.map",
+    "index.html": "/reactapp/index.html",
+    "precache-manifest.7d63ff31c9a6448fcdacb0390c5ac7e4.js": "/reactapp/precache-manifest.7d63ff31c9a6448fcdacb0390c5ac7e4.js",
+    "service-worker.js": "/reactapp/service-worker.js",
+    "static/css/2.9f67abcf.chunk.css.map": "/reactapp/static/css/2.9f67abcf.chunk.css.map",
+    "static/css/main.ede9f429.chunk.css.map": "/reactapp/static/css/main.ede9f429.chunk.css.map",
+    "static/js/2.e541704a.chunk.js.LICENSE.txt": "/reactapp/static/js/2.e541704a.chunk.js.LICENSE.txt",
+    "static/media/LSSMBB.webp": "/reactapp/static/media/LSSMBB.28d134c6.webp",
+    "static/media/Mancuso-Headshot.png": "/reactapp/static/media/Mancuso-Headshot.8decd0d6.png",
+    "static/media/NLBM.png": "/reactapp/static/media/NLBM.4445736c.png",
+    "static/media/SAS.png": "/reactapp/static/media/SAS.1272351a.png",
+    "static/media/University.png": "/reactapp/static/media/University.0e92a66d.png",
+    "static/media/logo.svg": "/reactapp/static/media/logo.06e73328.svg",
+    "static/media/sa-cas.png": "/reactapp/static/media/sa-cas.6ded22b5.png",
+    "static/media/sa-csm.png": "/reactapp/static/media/sa-csm.38fca00f.png",
+    "static/media/sa-csp.png": "/reactapp/static/media/sa-csp.3de06fd5.png",
+    "static/media/sa.png": "/reactapp/static/media/sa.f484bfb2.png",
+    "static/media/slick-theme.css": "/reactapp/static/media/slick.f97e3bbf.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ba799c29.js",
+    "static/css/2.9f67abcf.chunk.css",
+    "static/js/2.e541704a.chunk.js",
+    "static/css/main.ede9f429.chunk.css",
+    "static/js/main.bf5e8d3d.chunk.js"
+  ]
+}
