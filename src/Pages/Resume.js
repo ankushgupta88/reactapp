@@ -1,21 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Button, Col, Nav, Row, Tab, Container, Image, Modal } from 'react-bootstrap';
+import { Button, Carousel, Col, Nav, Row, Tab, Container, Image, Modal } from 'react-bootstrap';
 import '../Style.css';
-import logo1 from '../images/logo1.png';
-import logo2 from '../images/logo2.png';
-import logo3 from '../images/logo3.png';
-import logo4 from '../images/logo4.png';
-import logo5 from '../images/NLBM.png';
-import collage from '../images/University.png';
-import LSSMBB from '../images/LSSMBB.webp';
-import SAS from '../images/SAS.png';
-import PMP from '../images/PMP.png';
-import ACP from '../images/ACP.png';
-import Sa from '../images/sa.png';
-import Sa_scp from '../images/sa-csp.png';
-import Sa_cas from '../images/sa-cas.png';
-import Sa_cms from '../images/sa-csm.png';
 
 const API = "https://mancuso.ai/mancusov2/wp-json/v1/timeline";
 const APIC = "https://mancuso.ai/mancusov2/wp-json/v1/certificates";
