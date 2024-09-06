@@ -15,9 +15,16 @@ import {
     MDBIcon,
   } from "mdb-react-ui-kit";
 
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Button, Carousel, Col, Nav, Row, Tab, Container, Image, Modal } from 'react-bootstrap';
+import '../Style.css';
+
+
 const API = "https://mancuso.ai/mancusov2/wp-json/v1/timeline";
 const APIC = "https://mancuso.ai/mancusov2/wp-json/v1/certificates";
 const APIT = "https://mancuso.ai/mancusov2/wp-json/v1/get_tags";
+
 const APIS = "https://mancuso.ai/mancusov2/wp-json/v1/get_testimonial_byid/1310";
 
 
@@ -35,6 +42,11 @@ function Resume() {
 
         fetchSlider();
     }, []);
+
+
+
+function Resume() {
+
     const [experiences, setExperiences] = useState([]);
 
     useEffect(() => {
@@ -46,6 +58,7 @@ function Resume() {
                 console.error('Error fetching data:', error);
             }
         };
+
         
         fetchExperiences();
     }, []);
@@ -53,6 +66,11 @@ function Resume() {
     const removeShortcodes = (text) => {
         return text.replace(/\[rt-testimonial id="\d+" title="[^\"]+"\]/g, '');
       };
+
+
+        fetchExperiences();
+    }, []);
+
 
     const [certificates, setCertificates] = useState([]);
 
@@ -99,6 +117,7 @@ function Resume() {
         fetchTags();
     }, []);
 
+
     return (
         <div className='main_Content'>
             <div className='resume_section section_padding py-5 bg-white'>
@@ -111,7 +130,9 @@ function Resume() {
                             <button className='mainBtn'>Download resume</button>
                         </div>
                         <div>
+
                         <div>
+
                {experiences.length > 0 ? (
                 experiences.map((experience, index) => (
                 <div key={index}>
@@ -133,7 +154,11 @@ function Resume() {
                                     )}
 
                                     {/* parah */}
+
                                     <p dangerouslySetInnerHTML={{ __html: removeShortcodes(timelineItem.text) }}></p>
+
+                                    <p dangerouslySetInnerHTML={{ __html: timelineItem.text }}></p>
+
 
 
                                     {/* <h4 className="item-title pb-3">{timelineItem.title || "No title available"}</h4> */}
@@ -145,7 +170,7 @@ function Resume() {
                                             ))}
                                         </ul>
                                     )} */}
-                                    
+
                                 </div>
                             </li>
                         ))
@@ -154,12 +179,13 @@ function Resume() {
                     )}
                 </ul>
             </div>
-            
+
         ))
                             ) : (
                                 <p>Loading.....</p>
                             )}
                         </div>
+
                         </div>
 
 
@@ -174,6 +200,7 @@ function Resume() {
                         {education[0] && (
                        <div className='collegeCard mb-5' key={education[0].id}>
                        <a href= {education[0].settings.image.url}>
+
               <div className='coll_inner d-flex align-items-stretch'>
                 <div className='coll_logo align-content-center p-4'>
                   <Image src={education[0].settings.logo.url} alt={education[0].settings.title} fluid />
@@ -202,6 +229,7 @@ function Resume() {
                       {certificates.slice(1).map((certificate) => (
                         <div className='collegeCard' key={certificate.id}>
                             <a href={certificate.settings.image.url}>
+
                         <div className='coll_inner d-flex align-items-stretch'>
                             <div className='coll_logo align-content-center p-4'>
                                 <Image src={certificate.settings.logo.url} alt={certificate.name} fluid />

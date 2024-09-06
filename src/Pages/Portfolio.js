@@ -1,3 +1,4 @@
+
 /* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/img-redundant-alt */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -5,7 +6,9 @@ import React, { useState, useEffect } from 'react';
 import '../Style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+
 const API = "https://mancuso.ai/mancusov2/wp-json/v1/portfolios";
+
 
 
 function Portfolio() {    
@@ -94,3 +97,4 @@ function Portfolio() {
 }
 
 export default Portfolio
+
