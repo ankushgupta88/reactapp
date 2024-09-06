@@ -7,6 +7,7 @@ import './Style.css';
 import About from './Pages/About';
 import Resume from './Pages/Resume';
 import Portfolio from './Pages/Portfolio';
+import Single from './Pages/Single';
 import DesktopSidebar from './Pages/DesktopSidebar';
 import MobileHeader from './Pages/MobileHeader';
 import {Routes, Route } from "react-router-dom";
@@ -27,8 +28,9 @@ function App() {
           <Route path="/" element={<About />} />
           <Route path="resume" element={<Resume />} />
           <Route path="portfolio" element={<Portfolio />} />
+          <Route path="portfolio/:id" element={<Single />} />
           <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<Error404 />} />
+          <Route path="*" element={<About />} />
       </Routes>
     </div>
   );
