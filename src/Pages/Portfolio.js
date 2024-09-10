@@ -1,14 +1,8 @@
-
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react';
 import '../Style.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
-const API = "https://mancuso.ai/mancusov2/wp-json/v1/portfolios";
-
+const API = "https://mancuso.ai/wp-json/v1/portfolios";
 
 
 function Portfolio() {    
@@ -49,15 +43,15 @@ function Portfolio() {
   
     return (
       <div className="pt-4">
-        <div>
+        <div className='d-flex justify-content-end gap-2'>
           {filterOptions.map((category) => (
-            <button key={category} onClick={() => filterPosts(category)}>
+            <button className='text-capitalize' key={category} onClick={() => filterPosts(category)}>
               {category}
             </button>
           ))}
         </div>
         
-        <div>
+        <div className='d-flex flex-wrap'>
           {filteredPosts.length > 0 ? (
             filteredPosts.map((post) => (
               <Link key={post.id} to={`/portfolio/${post.id}`} style={{ textDecoration: 'none' }}>
@@ -97,4 +91,3 @@ function Portfolio() {
 }
 
 export default Portfolio
-
