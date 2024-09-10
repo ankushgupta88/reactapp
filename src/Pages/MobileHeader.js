@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from 'react';
-import {Offcanvas } from 'react-bootstrap';
+import {Button, Offcanvas } from 'react-bootstrap';
 import headerimg from '../images/Mancuso-Headshot.png'
 import { TfiMenu } from "react-icons/tfi";
 import DesktopSidebar from './DesktopSidebar';

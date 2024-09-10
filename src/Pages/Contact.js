@@ -1,5 +1,5 @@
-import React from 'react';
-import { InlineWidget  } from 'react-calendly';
+
+import { InlineWidget, PopupWidget  } from 'react-calendly';
 
 const Contact = () => {
     return(

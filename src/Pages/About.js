@@ -7,9 +7,7 @@ import { FaCompass, FaDiagramProject, FaLightbulb, FaPaperPlane, } from "react-i
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
 // import avtarimg from '../images/MancusoHeadshot.webp';
 import Logosslide from './LogoSlider';
-//import { Button, Col, Nav, Row, Tab, Container, Image } from 'react-bootstrap';
-import {  Col, Row } from 'react-bootstrap';
-// eslint-disable-next-line
+import { Button, Col, Nav, Row, Tab, Container, Image } from 'react-bootstrap';
 import { TestimonialItems } from './Testimonialitems';
 import axios from 'axios';
 
@@ -195,7 +193,7 @@ function About() {
                                         <div className='testimonial_credits'>
                                             <p className='avtar_name'>{items.name}</p>
                                             <a href={items.link} className='desg'>{items.company}</a>
-                                            <img className='sliderAvtar_' src={items.image.url} alt=''/>
+                                            <img className='sliderAvtar_' src={items.image.url} />
                                         </div>
                                     </div>
 

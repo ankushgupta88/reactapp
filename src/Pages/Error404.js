@@ -1,10 +1,13 @@
-import React from 'react';
+import { Outlet, Link } from "react-router-dom";
 
-const Error404 = () => (
-  <div>
-    <h1>404 Not Found</h1>
-    <p>The page you are looking for does not exist.</p>
-  </div>
-);
-
+const Error404 = () => {
+    return (
+        <>
+         <h1>This route is not exist</h1>;
+         <p>Back to About Me</p>
+         <Link to="/">About me</Link>
+        </>
+    )
+  };
+  
 export default Error404;

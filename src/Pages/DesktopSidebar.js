@@ -1,11 +1,8 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable jsx-a11y/img-redundant-alt */
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from 'react';
 import { FaLinkedinIn } from "react-icons/fa6";
-import { NavLink, Link } from "react-router-dom";
+import { Outlet, NavLink, Link } from "react-router-dom";
 // import headerimg from '../images/Mancuso-Headshot.png'
-import { Nav, Image } from 'react-bootstrap';
+import { Nav, Image, Modal, Button } from 'react-bootstrap';
 import axios from 'axios';
 
 function DesktopSidebar() {

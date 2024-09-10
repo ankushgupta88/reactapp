@@ -1,55 +1,74 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Style.css';
-//import { Button, Col, Nav, Row, Tab, Container, Image } from 'react-bootstrap';
-import {  Image } from 'react-bootstrap';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-//import Slider from "react-slick";
-import logo1 from '../images/logo1.png';
-import logo2 from '../images/logo2.png';
-import logo3 from '../images/logo3.png';
-import logo4 from '../images/logo4.png';
-import logo5 from '../images/logo5.png';
+import { Container } from 'react-bootstrap';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+import axios from 'axios';
 
-const logoSlider = () => {
+const LogoSlider = () => {
+  const [clients, setClients] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    // var settings = {
-    //     dots: true,
-    //     infinite: true,
-    //     slidesToShow: 5,
-    //     slidesToScroll: 1
-    //     autoplay: true
-    //     speed: 500,
-    //     autoplaySpeed: 500,
-    //     cssEase: "linear"
-    //   };
+  useEffect(() => {
+    const fetchClients = async () => {
+      try {
+        const response = await axios.get('https://mancuso.ai/mancusov2/wp-json/v1/past-employers');
+        console.log(response.data);
+        setClients(response.data.clients);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching clients:', error);
+        setLoading(false);
+      }
+    };
 
-    return(
-        <>
-           <section className='pastEmploye bg-white section_padding text-start pb-5'>
-              <h3 className='heading'>Past Employers</h3>
-              <div className='logoSlider d-flex justify-content-around'>
-               {/* <Slider {...settings}> */}
-                  <div className='logoImg'>
-                     <Image src={logo1} alt='logoimg' />
-                  </div>
-                  <div className='logoImg'>
-                     <Image src={logo2} alt='logoimg' />
-                  </div>
-                  <div className='logoImg'>
-                     <Image src={logo3} alt='logoimg' />
-                  </div>
-                  <div className='logoImg'>
-                     <Image src={logo4} alt='logoimg' />
-                  </div>
-                  <div className='logoImg'>
-                     <Image src={logo5} alt='logoimg' />
-                  </div>
-                {/* </Slider> */}
-              </div>
-            </section>
-        </>
-    )
+    fetchClients();
+  }, []);
+
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 769 },
+      items: 5,
+      slidesToSlide: 1,
+    },
+    mobile: {
+      breakpoint: { max: 768, min: 0 },
+      items: 3,
+      slidesToSlide: 1,
+
+    },
   };
-  
-  export default logoSlider;
+
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (!clients.length) {
+    return <p>No clients found.</p>;
+  }
+
+  return (
+    <div className='bg-white m-0'>
+      <section className='section_padding past_e text-start py-5 w-100'>
+      <h3 className='heading'>Past Employers
+</h3>
+      <Carousel 
+        responsive={responsive} 
+        arrows={true}
+      >
+        {clients.map((client) => (
+          <div key={client._id} className='text-center'>
+            <img 
+              src={client.image.url} 
+              alt={client.name} 
+              style={{ width: '100px', height: '80px', objectFit: 'cover' }} 
+            />
+          </div>
+        ))}
+      </Carousel>
+      </section>
+    </div>
+  );
+};
+
+export default LogoSlider;
